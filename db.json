@@ -1,36 +1,60 @@
 {
-  "employee": [
+  "users": [
     {
       "name": "Nihira techiees",
+      "username": "user1",
       "email": "nihiratechiees@gmail.com",
       "phone": "98899090",
       "active": true,
-      "id": 1
+      "skills": "",
+      "hobby": "",
+      "id": "1"
     },
     {
       "name": "Ricky Ponting",
+      "username": "user2",
       "email": "rp@in.com",
       "phone": "98899090",
       "active": true,
-      "id": 2
+      "skills": "",
+      "hobby": "",
+      "id": "2"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Robert",
+      "username": "user3",
       "email": "robert@in.com",
+      "skills": "",
+      "hobby": "",
       "phone": "908908767"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Kane Williamson",
+      "username": "user4",
       "email": "kw@in.com",
+      "skills": "",
+      "hobby": "",
       "phone": "908908767"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "vikram",
+      "username": "user5",
       "email": "vikram@in.com",
+      "skills": "",
+      "hobby": "",
       "phone": "908908767"
+    },
+    {
+      "id": "e093",
+      "name": "usser1",
+      "username": "username1",
+      "email": "user@user.com",
+      "phone": "+6011112312",
+      "skills": "sdasld",
+      "hobby": "13123"
     }
   ]
 }

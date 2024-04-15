@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const EmpCreate = () => {
+const UserCreate = () => {
 
     const[id,idchange]=useState("");
     const[name,namechange]=useState("");
+    const[username, usernamechange]=useState("");
     const[email,emailchange]=useState("");
     const[phone,phonechange]=useState("");
+    const[skills,skillschange]=useState("");
+    const[hobby,hobbychange]=useState("");
     const[active,activechange]=useState(true);
     const[validation,valchange]=useState(false);
 
@@ -15,13 +18,13 @@ const EmpCreate = () => {
 
     const handlesubmit=(e)=>{
       e.preventDefault();
-      const empdata={name,email,phone,active};
+      const userData={name,username,email,phone,active,skills,hobby};
       
 
-      fetch("http://localhost:8000/employee",{
+      fetch("http://localhost:8000/users",{
         method:"POST",
         headers:{"content-type":"application/json"},
-        body:JSON.stringify(empdata)
+        body:JSON.stringify(userData)
       }).then((res)=>{
         alert('Saved successfully.')
         navigate('/');
@@ -40,7 +43,7 @@ const EmpCreate = () => {
 
                         <div className="card" style={{"textAlign":"left"}}>
                             <div className="card-title">
-                                <h2>Employee Create</h2>
+                                <h2>User Create</h2>
                             </div>
                             <div className="card-body">
 
@@ -63,6 +66,14 @@ const EmpCreate = () => {
 
                                     <div className="col-lg-12">
                                         <div className="form-group">
+                                            <label>Username</label>
+                                            <input required value={username} onMouseDown={e=>valchange(true)} onChange={e=>usernamechange(e.target.value)} className="form-control"></input>
+                                        {username.length==0 && validation && <span className="text-danger">Enter the username</span>}
+                                        </div>
+                                    </div>
+
+                                    <div className="col-lg-12">
+                                        <div className="form-group">
                                             <label>Email</label>
                                             <input value={email} onChange={e=>emailchange(e.target.value)} className="form-control"></input>
                                         </div>
@@ -72,6 +83,20 @@ const EmpCreate = () => {
                                         <div className="form-group">
                                             <label>Phone</label>
                                             <input value={phone} onChange={e=>phonechange(e.target.value)} className="form-control"></input>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-lg-12">
+                                        <div className="form-group">
+                                            <label>Skills</label>
+                                            <input value={skills} onChange={e=>skillschange(e.target.value)} className="form-control"></input>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-lg-12">
+                                        <div className="form-group">
+                                            <label>Hobby</label>
+                                            <input value={hobby} onChange={e=>hobbychange(e.target.value)} className="form-control"></input>
                                         </div>
                                     </div>
 
@@ -103,4 +128,4 @@ const EmpCreate = () => {
     );
 }
 
-export default EmpCreate;
+export default UserCreate;

@@ -1,22 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import EmpListing from './EmpListing';
-import EmpCreate from './EmpCreate';
-import EmpDetail from './EmpDetail';
-import EmpEdit from './EmpEdit';
+import UserListing from './UserListing';
+import UserCreate from './UserCreate';
+import UserDetail from './UserDetail';
+import UserEdit from './UserEdit';
 
 function App() {
   return (
     <div className="App">
-      <h1>React JS CRUD Opertations</h1>
+      <h1>Interview Assessment CRUD</h1>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<EmpListing />}></Route>
-          <Route path='/employee/create' element={<EmpCreate />}></Route>
+          <Route path='/' element={<UserListing />}></Route>
+          <Route path='/user/create' element={<UserCreate />}></Route>
 
-          <Route path='/employee/detail/:empid' element={<EmpDetail />}></Route>
-          <Route path='/employee/edit/:empid' element={<EmpEdit />}></Route>
+          <Route path='/users/detail/:uid' element={<UserDetail />}></Route>
+          <Route path='/users/edit/:uid' element={<UserEdit />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
